@@ -4,12 +4,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1
-  cloud:
-    stream:
-      binders:
-        myMessage:
-          group: order
-          content-type: application/json
   rabbitmq:
     host: 192.168.1.132
     port: 5672
@@ -23,10 +17,6 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://192.168.0.104:3306/SpringCloud_Sell?characterEncoding=utf-8&useSSL=false
-eureka:
-  client:
-    service-url:
-      defaultZone: http://192.168.1.132:8761/eureka/,http://192.168.1.132:8762/eureka/,http://192.168.1.132:8763/eureka/
 hystrix:
   command:
     default: #默认设置(全局)
@@ -42,4 +32,4 @@ hystrix:
 management:
   context-path: /
 env:
-  dev
+  test
