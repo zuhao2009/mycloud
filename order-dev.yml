@@ -1,13 +1,35 @@
 spring:
+  zipkin:
+    base-url: http://192.168.1.132:9411/
+  sleuth:
+    sampler:
+      percentage: 1
   rabbitmq:
     host: 192.168.1.132
     port: 5672
     password: admin
     username: admin
+  redis:
+    host: 192.168.1.133
+    port: 6379
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
     url: jdbc:mysql://192.168.0.104:3306/SpringCloud_Sell?characterEncoding=utf-8&useSSL=false
+hystrix:
+  command:
+    default: #默认设置(全局)
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+    getProductInfoList: #给某个方法设置超时
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+management:
+  context-path: /
 env:
-  dev
+  
