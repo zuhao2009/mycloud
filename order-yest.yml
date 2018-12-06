@@ -41,3 +41,5 @@ hystrix:
             timeoutInMilliseconds: 3000
 management:
   context-path: /
+env:
+  dev
