@@ -32,4 +32,4 @@ hystrix:
 management:
   context-path: /
 env:
-  
+  dev
